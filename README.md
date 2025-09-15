@@ -2,7 +2,7 @@
 
 I am working with the project which is a wonder...Currently, two official plugins are available:
 
-- [Live website link](www.livelink-comming)
+- [Live website link](https://simple-ecommerce-mern-n251-2.netlify.app/)
 
 - [Backend Api](https://news-server-done.vercel.app)
 ## Api endpoints
