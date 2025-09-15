@@ -5,7 +5,7 @@ const Home = () => {
     <div>
       {/* You can open the modal using document.getElementById('ID').showModal() method */}
       <button
-        className="btn"
+        className="btn text-5xl text-primary"
         onClick={() => document.getElementById("my_modal_3").showModal()}
       >
         open modal
