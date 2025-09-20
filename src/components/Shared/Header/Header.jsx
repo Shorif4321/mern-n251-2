@@ -1,9 +1,27 @@
 import React from "react";
+import logo from "../../../assets/Logo.svg";
 
 const Header = () => {
+  const menuItems = (
+    <>
+      <li>
+        <a className="">Shop</a>
+      </li>
+      <li>
+        <a className="">Order</a>
+      </li>
+      <li>
+        <a className="">Order Review</a>
+      </li>
+      <li>
+        <a className="">Manage Inventory</a>
+      </li>
+    </>
+  );
+
   return (
     <nav>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="fixed left-0 right-0 navbar justify-between bg-black shadow-sm text-white lg:px-35 md:h-20">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,55 +43,19 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-black text-white rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <li>
-                <a className="text-5xl text-gray-600">Item 1</a>
-              </li>
-              <li>
-                <a>Parent</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a>Item 3</a>
-              </li>
+             {menuItems}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+
+          <img src={logo} alt="ema-jho" />
         </div>
+        {/* ===== larger device ===== */}
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <a className="text-5xl text-primary">Item 1</a>
-            </li>
-            <li>
-              <details>
-                <summary>Parent</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+            {menuItems}
           </ul>
-        </div>
-        <div className="navbar-end">
-          <div className="status status-info animate-bounce"></div> Unread
-          messages
         </div>
       </div>
     </nav>
