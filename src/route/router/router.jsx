@@ -3,6 +3,7 @@ import Main from "../../layout/Main";
 import Home from "../../components/Home/Home";
 import Shop from "../../components/Shop/Shop";
 import NotFound from "../../components/NotFound/NotFound";
+import Order from "../../components/Order/Order";
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         {
           path: "/shop",
           element: <Shop></Shop>,
+        },
+        {
+          path: "/order",
+          element: <Order></Order>,
         },
       ],
     },
