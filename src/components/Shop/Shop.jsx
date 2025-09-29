@@ -3,7 +3,6 @@ import Product from "../Product/Product";
 import Cart from "../Cart/Cart";
 
 const Shop = () => {
-  
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
 
@@ -23,8 +22,15 @@ const Shop = () => {
   // ========== product add to cart ============
   const handleAddToCart = (selectedProduct) => {
     let newCart = [];
-    newCart.push(selectedProduct);
-    newCart = [...cart, selectedProduct];
+    const exist = cart.find((product) => product.id === selectedProduct.id);
+    if (!exist) {
+      selectedProduct.quantity = 1;
+      newCart = [...cart, selectedProduct];
+    } else {
+      const rest = cart.filter((product) => product.id !== selectedProduct.id);
+      exist.quantity = exist.quantity + 1;
+      newCart = [...rest, selectedProduct];
+    }
     setCart(newCart);
   };
 
